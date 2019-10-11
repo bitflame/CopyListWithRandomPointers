@@ -1,0 +1,7 @@
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\obj\Debug\CopyListWithRandomPointers.csprojAssemblyReference.cache
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\obj\Debug\CopyListWithRandomPointers.csproj.CoreCompileInputs.cache
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\bin\Debug\CopyListWithRandomPointers.exe.config
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\bin\Debug\CopyListWithRandomPointers.exe
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\bin\Debug\CopyListWithRandomPointers.pdb
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\obj\Debug\CopyListWithRandomPointers.exe
+C:\Users\usr\source\repos\CopyListWithRandomPointers\CopyListWithRandomPointers\obj\Debug\CopyListWithRandomPointers.pdb
