@@ -82,7 +82,15 @@ namespace CopyListWithRandomPointers
             nCurr = n;
             while (nCurr != null)
             {
-                nCurr.next.random = nCurr.random.next;
+                try
+                {
+                  nCurr.next.random = nCurr.random.next;
+                }
+                catch ( NullReferenceException err)
+                {
+                    Console.WriteLine("One of the objects you tried to use is null");
+                    Console.WriteLine(err.Message);
+                }
                 nCurr = nCurr.next.next;
             }
             Node copy = n.next;
