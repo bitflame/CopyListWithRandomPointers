@@ -18,45 +18,48 @@ namespace CopyListWithRandomPointers
             secNode.random = secNode;
             secNode.next = null;
             head = firstNode;
-            CopyRandomList(head);
+            PrintNode(cloneExtraSpace(head));
         }
         private static void PrintNode(Node n)
         {
             Console.WriteLine("{0}{1}{2}", n.val, n.next, n.random);
             Console.ReadLine();
         }
-        private static Node CopyRandomList(Node head)
+        private static Node cloneExtraSpace(Node n)
         {
-            if (head == null)
+            if (n == null)
             {
                 return null;
             }
-            Node savedOrigNode = head;
-            Node clonedNode = new Node(0, null, null);
-            Node savedClonedNode = clonedNode;
-            Node tempNode = clonedNode;
-            while (head != null)
+            Dictionary<Node, Node> mapping = new Dictionary<Node, Node>();
+            Node copy = new Node();
+            Node nCurr = n;
+            var copyCurr = copy;
+            mapping.Add(nCurr, copyCurr);
+            while (nCurr.next != null)
             {
-                clonedNode = new Node(head.val, null, head);
-                tempNode.next = clonedNode;
-                tempNode = tempNode.next;
-                head = head.next; 
+                copyCurr.next = new Node();
+                nCurr = nCurr.next;
+                copyCurr = copyCurr.next;
+                mapping.Add(nCurr, copyCurr);
             }
-            clonedNode = savedClonedNode;
-            head = savedOrigNode;  //Why does head get set to null even though savedOrigNode is not?
-            while (clonedNode != null)
+            nCurr = n;
+            copyCurr = copy;
+            while (copyCurr != null)
             {
-                clonedNode.random = head.random;
-                clonedNode = clonedNode.next;
-                head = head.next;
+                mapping.TryGetValue(nCurr.random, out Node tempNode);
+                copyCurr.random = tempNode;
+                nCurr = nCurr.next;
+                copyCurr = copyCurr.next;
             }
-            clonedNode = savedClonedNode;
-            while (clonedNode != null)
-            {
-                clonedNode.random = clonedNode.random.random.next;
-                clonedNode = clonedNode.next;
-            }
-            return savedClonedNode;
+            return copy;
         }
+        //private static Node cloneNoExtraSpace(Node n)
+        //{
+        //    if ( n == null)
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }
